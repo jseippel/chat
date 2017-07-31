@@ -3,7 +3,7 @@
 
   "name": "Chat App",
   "description": "App for chat",
-  "version": "0.1",
+  "version": "0.2",
 
   "browser_action": {
     "default_icon": {
@@ -14,10 +14,26 @@
     "default_popup": "popup.html",
     "default_title": "Chat"
   },
+
   "permissions": [
     "webRequest",
     "webRequestBlocking",
     "*://www.messenger.com/",
     "*://hangouts.google.com/"
-  ]
+  ],
+
+  "background": {
+    "page": "background.html"
+  },
+
+  "content_scripts": [
+  {
+    "matches": [
+        "*://www.messenger.com/*",
+        "*://hangouts.google.com/*"
+        ],
+    "js": ["facebook.js"],
+    "run_at": "document_end",
+    "all_frames": true
+  }]
 }
