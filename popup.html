@@ -4,22 +4,31 @@
  "browser_action" field in manifest.json contains the "default_popup" key with
  value "popup.html".
  -->
- <html>
-  <head>
-    <title>IFRAME DEMO</title>
+<html>
+
+<head>
+    <title>Chat</title>
     <style type="text/css">
-      body {
-        min-width: 267px; /* your desired width */
-        min-height: 380px;
-      }
+        body {
+            min-width: 267px;
+            /* your desired width */
+            min-height: 380px;
+        }
     </style>
     <script src="popup.js"></script>
-  </head>
-  <body>
-    <!--iframe src="http://www.messenger.com/" width="300px" height="500px"
-      frameborder="0"></iframe-->
-    <!--iframe src="http://hangouts.google.com/" width="267px" height="380px"
-      frameborder="0"></iframe-->
-      <div id="x" value="m">Some thing</div>
-  </body>
+</head>
+
+<body>
+    <div id="menu">
+        <h1>Choose messaging:</h1>
+        <button id="facebook-btn" style="margin:5px">Facebook Messenger</button>
+        <button id="google-btn" style="margin:5px">Google Hangouts</button>
+    </div>
+    <div id="chat">
+        <iframe id="facebook-chat" style="display:none" width="300px" height="500px" frameborder="0"></iframe>
+        <iframe id="google-chat" style="display: none" width="267px" height="380px" frameborder="0"></iframe>
+    </div>
+    <!--src inserted on DOMContentLoaded-->
+</body>
+
 </html>
